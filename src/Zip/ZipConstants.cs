@@ -473,7 +473,7 @@ namespace ICSharpCode.SharpZipLib.Zip
         // 850 is a good default for english speakers particularly in Europe.
 		static int defaultCodePage = CultureInfo.CurrentCulture.TextInfo.ANSICodePage;
 #else
-		static int defaultCodePage = Thread.CurrentThread.CurrentCulture.TextInfo.OEMCodePage;
+		static int defaultCodePage = (Thread.CurrentThread.CurrentCulture.TextInfo.OEMCodePage <= 1) ? 850 : Thread.CurrentThread.CurrentCulture.TextInfo.OEMCodePage;
 #endif
 		
 		/// <summary>
