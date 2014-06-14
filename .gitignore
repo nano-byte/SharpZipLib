@@ -1,0 +1,16 @@
+/bin/
+/packages/*/
+/_ReSharper.*/
+/_TeamCity.*/
+/_dotTrace.*/
+/_dotMemory.*/
+/src/*.nupkg
+obj/
+*.bak
+*.cache
+*.pidb
+*.suo
+*.user
+*.userprefs
+*.DotSettings
+*.resources
