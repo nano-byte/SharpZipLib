@@ -1,11 +1,12 @@
-/bin/
+bin/
+obj/
+/src/*.nupkg
 /packages/*/
 /_ReSharper.*/
 /_TeamCity.*/
 /_dotTrace.*/
 /_dotMemory.*/
-/src/*.nupkg
-obj/
+/_dotCover.*/
 *.bak
 *.cache
 *.pidb
