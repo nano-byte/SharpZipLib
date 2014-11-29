@@ -992,9 +992,9 @@ namespace ICSharpCode.SharpZipLib.Zip
 
 		private DateTime GetDateTime(ZipExtraData extraData) {
 			// Check for NT timestamp
-			var ntData = extraData.GetData<NTTaggedData>();
-			if (ntData != null)
-				return ntData.LastModificationTime;
+			//var ntData = extraData.GetData<NTTaggedData>();
+			//if (ntData != null)
+			//	return ntData.LastModificationTime;
 
 			// Check for Unix timestamp
 			var unixData = extraData.GetData<ExtendedUnixData>();
@@ -1005,7 +1005,7 @@ namespace ICSharpCode.SharpZipLib.Zip
 				((unixData.Include & ExtendedUnixData.Flags.AccessTime) != 0) &&
 				((unixData.Include & ExtendedUnixData.Flags.CreateTime) != 0))
 				return unixData.ModificationTime;
-			
+
 			// Fall back to DOS time
 			uint sec = Math.Min(59, 2 * (dosTime & 0x1f));
 			uint min = Math.Min(59, (dosTime >> 5) & 0x3f);
