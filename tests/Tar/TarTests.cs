@@ -442,11 +442,10 @@ namespace ICSharpCode.SharpZipLib.Tests.Tar {
 		/// </summary>
 		[Test]
         [Category("Tar")]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
 		public void InvalidModTime()
 		{
 			TarEntry e = TarEntry.CreateTarEntry("test");
-			e.ModTime = DateTime.MinValue;
+		    Assert.Throws<ArgumentOutOfRangeException>(() => e.ModTime = DateTime.MinValue);
 		}
 		
 		/// <summary>
@@ -454,11 +453,10 @@ namespace ICSharpCode.SharpZipLib.Tests.Tar {
 		/// </summary>
 		[Test]
         [Category("Tar")]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
 		public void InvalidSize()
 		{
 			TarEntry e = TarEntry.CreateTarEntry("test");
-			e.Size = -6;
+		    Assert.Throws<ArgumentOutOfRangeException>(() => e.Size = -6);
 		}
 		
 		/// <summary>
@@ -466,11 +464,10 @@ namespace ICSharpCode.SharpZipLib.Tests.Tar {
 		/// </summary>
 		[Test]
         [Category("Tar")]
-        [ExpectedException(typeof(ArgumentNullException))]
 		public void InvalidName()
 		{
 			TarEntry e = TarEntry.CreateTarEntry("test");
-			e.Name = null;
+		    Assert.Throws<ArgumentNullException>(() => e.Name = null);
 		}
 		
 		/// <summary>
@@ -494,11 +491,10 @@ namespace ICSharpCode.SharpZipLib.Tests.Tar {
 		/// </summary>
 		[Test]
         [Category("Tar")]
-        [ExpectedException(typeof(ArgumentNullException))]
 		public void InvalidMagic()
 		{
 			TarEntry e = TarEntry.CreateTarEntry("test");
-			e.TarHeader.Magic = null;
+		    Assert.Throws<ArgumentNullException>(() => e.TarHeader.Magic = null);
 		}
 		
 		/// <summary>
@@ -506,11 +502,10 @@ namespace ICSharpCode.SharpZipLib.Tests.Tar {
 		/// </summary>
 		[Test]
         [Category("Tar")]
-        [ExpectedException(typeof(ArgumentNullException))]
 		public void InvalidLinkName()
 		{
 			TarEntry e = TarEntry.CreateTarEntry("test");
-			e.TarHeader.LinkName = null;
+		    Assert.Throws<ArgumentNullException>(() => e.TarHeader.LinkName = null);
 		}
 		
 		/// <summary>
@@ -518,11 +513,10 @@ namespace ICSharpCode.SharpZipLib.Tests.Tar {
 		/// </summary>
 		[Test]
         [Category("Tar")]
-        [ExpectedException(typeof(ArgumentNullException))]
 		public void InvalidVersionName()
 		{
 			TarEntry e = TarEntry.CreateTarEntry("test");
-			e.TarHeader.Version = null;
+		    Assert.Throws<ArgumentNullException>(() => e.TarHeader.Version = null);
 		}
 
 		[Test]
