@@ -486,6 +486,13 @@ namespace ICSharpCode.SharpZipLib.Zip
             ? 437 // The default OEM encoding in a console in a default Windows installation, as a fallback.
 	        : Thread.CurrentThread.CurrentCulture.TextInfo.OEMCodePage;  
 #endif
+
+#if NETSTANDARD2_0
+		static ZipConstants()
+		{
+			Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+		}
+#endif
 		
 		/// <summary>
 		/// Default encoding used for string conversion.  0 gives the default system OEM code page.
