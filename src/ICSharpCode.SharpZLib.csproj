@@ -25,7 +25,7 @@
 
   <PropertyGroup>
     <PackageId>ICSharpCode.SharpZipLib.Patched</PackageId>
-    <Version>0.86.5.1</Version>
+    <Version>0.86.5.2</Version>
     <Product>SharpZipLib</Product>
     <Company>SharpDevelop</Company>
     <Authors>SharpDevelop</Authors>
