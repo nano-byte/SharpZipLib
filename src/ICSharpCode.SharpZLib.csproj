@@ -6,7 +6,7 @@
     <TargetFrameworks>net20;netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <IncludeSource>True</IncludeSource>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <NoWarn>$(NoWarn);1591</NoWarn>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
     <SignAssembly>True</SignAssembly>
@@ -31,11 +31,15 @@
     <Authors>SharpDevelop</Authors>
     <Description>A version of SharpZipLib with custom patches applied.</Description>
     <PackageProjectUrl>https://icsharpcode.github.io/SharpZipLib/</PackageProjectUrl>
-    <RepositoryUrl>http://github.com/nano-byte/SharpZipLib</RepositoryUrl>
+    <RepositoryUrl>https://github.com/nano-byte/SharpZipLib</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="System.Text.Encoding.CodePages" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
