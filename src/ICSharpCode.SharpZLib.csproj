@@ -31,6 +31,7 @@
     <Authors>SharpDevelop</Authors>
     <Description>A version of SharpZipLib with custom patches applied.</Description>
     <PackageProjectUrl>https://icsharpcode.github.io/SharpZipLib/</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/nano-byte/SharpZipLib</RepositoryUrl>
   </PropertyGroup>
 
